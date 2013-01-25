@@ -34,8 +34,8 @@
 </div>
 
 <div class="wrapLeft">
-	<% if flash[:annotation_upload_invalid_lines] -%>
-		<p class="error"><%= flash[:annotation_upload_invalid_lines] %></p>
+	<% if flash[:error] -%>
+		<p class="error"><%= flash[:error].join("<br />") %></p>
 	<% end -%>
 	<% if flash[:annotation_upload_success] -%>
 		<p class="success"><%= flash[:annotation_upload_success] %></p>
