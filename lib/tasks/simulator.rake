@@ -23,7 +23,7 @@ namespace :markus do
   namespace :simulator do
     desc "Generate assignments, random students, submissions and TA data"
     task(:create => :environment) do
-      
+
       num_of_assignments = Integer(ENV["NUM_OF_ASSIGNMENTS"])
       # If the uer did not provide the environment variable "NUM_OF_ASSIGNMENTS",
       # the simulator will create two assignments
@@ -148,7 +148,7 @@ namespace :markus do
                     :last_name => student_last_name,
                     :first_name => 'Student',
                     :type => 'Student')
-            
+
             student.save!
             student.create_group_for_working_alone_student(assignment.id)
             student.save
