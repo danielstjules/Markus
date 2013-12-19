@@ -204,12 +204,12 @@ class AnnotationCategoriesControllerTest < AuthenticatedControllerTest
     end
 
     context 'As another admin' do
-        should 'update last_editor_id with editor.id' do 
+        should 'update last_editor_id with editor.id' do
           get_as @editor,
                 :update_annotation,
                 :assignment_id => 1,
                 :id => @annotation_text.id,
-                :annotation_text => @annotation_text,
+                :annotation_text_attributes => @annotation_text.attributes,
                 :format => :js
         @annotation_text = AnnotationText.find(@annotation_text.id)
         assert_response :success
